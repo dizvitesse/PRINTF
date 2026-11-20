@@ -1,5 +1,18 @@
 #include "ft_printf.h"
 
+static int	handle_hexa(unsigned long n, char format)
+{
+	int	count;
+	int	res;
+
+	count = ft_puthexa(n / 16, format);
+	if (count == -1)
+		return (-1);
+	res = ft_puthexa(n % 16, format);
+	if (res == -1)
+		return (-1);
+	return (count + res);
+}
 int	ft_puthexa(unsigned long n, char format)
 {
     const char * hex;
@@ -10,7 +23,7 @@ int	ft_puthexa(unsigned long n, char format)
         hex = "0123456789ABCDEF";
     if (n > 15)
     {
-        return(ft_puthexa(n / 16, format) + ft_puthexa(n % 16, format));
+        return(handle_hexa(n, format));
     }
     else 
         return(ft_putchar(hex[n]));

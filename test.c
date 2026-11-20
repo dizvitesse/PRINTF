@@ -1,25 +1,25 @@
-// #include "ft_printf.h"
-// #include <stdio.h>
-// #include <limits.h>
+#include "ft_printf.h"
+#include <stdio.h>
+#include <limits.h>
+#include <fcntl.h>
 
-// int	main(void)
-// {
+int	main(void)
+{
+	// int	our;
+	// int	real;
+	// int	n;
 
+	// n = 42;
 
-
-//     // printf("%%%\n");
-//     // ft_printf("%%%\n");
-
-// 	int	our;
-// 	int	real;
-// 	int	n;
-
-// 	n = 42;
-
-// 	/* 1. Normal text */
-// 	our = ft_printf("%s", "hallo");
-// 	real = printf("%s", "hallo");
-// 	printf("Returns: ours=%d | real=%d\n\n", our, real);
+	/* 1. Normal text */
+    close(1);
+    int i = ft_printf("reda");
+    int j  = printf("reda");
+    printf("%d\n", i);
+    printf("%d\n", j);
+}
+ // printf("%%%\n");
+ // ft_printf("%%%\n");
 
 // 	/* 2. All conversions */
 // 	our = ft_printf("Char: %c | String: %s | Pointer: %p\n",'A', "hello", &n);

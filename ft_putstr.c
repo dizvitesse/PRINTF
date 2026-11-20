@@ -9,7 +9,7 @@ int	ft_putstr(char *s)
 		return (write(1, "(null)", 6));
 	while (s[i])
 	{
-		if (write(1, &s[i], 1) == -1)
+		if (ft_putchar(s[i]) == -1)
         	return (-1);
 		i++;
 	}

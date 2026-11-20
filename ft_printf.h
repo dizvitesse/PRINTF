@@ -1,7 +1,7 @@
 #ifndef FT_PRINT_H
 #define FT_PRINT_H
 
-#include <stdlib.h>
+#include <limits.h>
 #include <unistd.h>
 #include <stdarg.h>
 
