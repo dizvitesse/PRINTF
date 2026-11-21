@@ -1,5 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rsabbar <rsabbar@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/11/20 18:14:54 by rsabbar           #+#    #+#             */
+/*   Updated: 2026/11/21 08:07:24 by rsabbar          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "ft_printf.h"
+
 static int	handle_unknown(char specifier)
 {
 	int	res;
@@ -13,15 +25,11 @@ static int	handle_unknown(char specifier)
 		return (-1);
 	return (res + count);
 }
+
 static int	handle_conversion(char specifier, va_list args)
 {
-	char	c;
-
 	if (specifier == 'c')
-	{
-		c = va_arg(args, int);
-		return (ft_putchar(c));
-	}
+		return (ft_putchar(va_arg(args, int)));
 	else if (specifier == 's')
 		return (ft_putstr(va_arg(args, char *)));
 	else if (specifier == 'd' || specifier == 'i')
@@ -36,6 +44,7 @@ static int	handle_conversion(char specifier, va_list args)
 		return (ft_putchar('%'));
 	return (handle_unknown(specifier));
 }
+
 static int	handle_format(const char *format, int i, va_list args)
 {
 	if (format[i] != '%')

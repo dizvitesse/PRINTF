@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rsabbar <rsabbar@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/11/20 18:15:13 by rsabbar           #+#    #+#             */
+/*   Updated: 2026/11/20 18:17:38 by rsabbar          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	ft_putptr(void *ptr)
@@ -20,22 +32,3 @@ int	ft_putptr(void *ptr)
 	count += res;
 	return (count);
 }
-
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	int		a;
-// 	int		count;
-// 	void	*ptr;
-
-// 	a = 42;
-// 	ptr = &a;
-
-// 	printf("System printf: %p\n", ptr);
-
-// 	printf("Our ft_putptr: ");
-// 	count = ft_putptr(ptr);
-// 	printf("\nCount: %d\n", count);
-
-// 	return (0);
-// }
